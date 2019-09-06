@@ -110,7 +110,7 @@ namespace OrderSimplifier.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("12")]
         public decimal SimulationCount {
             get {
                 return ((decimal)(this["SimulationCount"]));
@@ -122,13 +122,25 @@ namespace OrderSimplifier.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool SimplifyAutoSelectText {
             get {
                 return ((bool)(this["SimplifyAutoSelectText"]));
             }
             set {
                 this["SimplifyAutoSelectText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SimplifyAutoCopy {
+            get {
+                return ((bool)(this["SimplifyAutoCopy"]));
+            }
+            set {
+                this["SimplifyAutoCopy"] = value;
             }
         }
     }

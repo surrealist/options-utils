@@ -34,10 +34,13 @@ SC 1175 @0.8 x 1
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="SimulationCount" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">10</Value>
+      <Value Profile="(Default)">12</Value>
     </Setting>
     <Setting Name="SimplifyAutoSelectText" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SimplifyAutoCopy" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

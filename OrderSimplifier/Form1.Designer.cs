@@ -30,8 +30,6 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.panel1 = new System.Windows.Forms.Panel();
-      this.chkAutoSelectText = new System.Windows.Forms.CheckBox();
-      this.num = new System.Windows.Forms.NumericUpDown();
       this.label1 = new System.Windows.Forms.Label();
       this.button1 = new System.Windows.Forms.Button();
       this.txtOutput = new System.Windows.Forms.TextBox();
@@ -42,24 +40,31 @@
       this.linkLabel1 = new System.Windows.Forms.LinkLabel();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage1 = new System.Windows.Forms.TabPage();
-      this.textBox1 = new System.Windows.Forms.TextBox();
       this.tabPage2 = new System.Windows.Forms.TabPage();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.rdLF = new System.Windows.Forms.RadioButton();
       this.rdSF = new System.Windows.Forms.RadioButton();
       this.label5 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
+      this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+      this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.panel4 = new System.Windows.Forms.Panel();
+      this.label6 = new System.Windows.Forms.Label();
+      this.button2 = new System.Windows.Forms.Button();
+      this.chkAutoCopy = new System.Windows.Forms.CheckBox();
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+      this.chkAutoSelectText = new System.Windows.Forms.CheckBox();
+      this.num = new System.Windows.Forms.NumericUpDown();
+      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.rdLF = new System.Windows.Forms.RadioButton();
       this.numVolume = new System.Windows.Forms.NumericUpDown();
       this.numCount = new System.Windows.Forms.NumericUpDown();
       this.numSteps = new System.Windows.Forms.NumericUpDown();
       this.numStartIndex = new System.Windows.Forms.NumericUpDown();
-      this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-      this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
       this.statusStrip1.SuspendLayout();
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
@@ -67,15 +72,19 @@
       this.tabPage1.SuspendLayout();
       this.tabPage2.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      this.menuStrip1.SuspendLayout();
+      this.panel4.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numVolume)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numSteps)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numStartIndex)).BeginInit();
-      this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.panel4);
       this.panel1.Controls.Add(this.chkAutoSelectText);
       this.panel1.Controls.Add(this.num);
       this.panel1.Controls.Add(this.label1);
@@ -85,43 +94,6 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(184, 334);
       this.panel1.TabIndex = 2;
-      // 
-      // chkAutoSelectText
-      // 
-      this.chkAutoSelectText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.chkAutoSelectText.AutoSize = true;
-      this.chkAutoSelectText.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
-      this.chkAutoSelectText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.chkAutoSelectText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.chkAutoSelectText.Location = new System.Drawing.Point(6, 312);
-      this.chkAutoSelectText.Name = "chkAutoSelectText";
-      this.chkAutoSelectText.Size = new System.Drawing.Size(113, 19);
-      this.chkAutoSelectText.TabIndex = 3;
-      this.chkAutoSelectText.Text = "Auto Select Text";
-      this.chkAutoSelectText.UseVisualStyleBackColor = true;
-      // 
-      // num
-      // 
-      this.num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.num.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimplifyMultiplier", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.num.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.num.Location = new System.Drawing.Point(55, 18);
-      this.num.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-      this.num.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.num.Name = "num";
-      this.num.Size = new System.Drawing.Size(123, 32);
-      this.num.TabIndex = 1;
-      this.num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      this.num.Value = global::OrderSimplifier.Properties.Settings.Default.SimplifyMultiplier;
-      this.num.ValueChanged += new System.EventHandler(this.Num_ValueChanged);
       // 
       // label1
       // 
@@ -174,7 +146,6 @@
       // 
       // lblLines
       // 
-      this.lblLines.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
       this.lblLines.Name = "lblLines";
       this.lblLines.Size = new System.Drawing.Size(552, 17);
       this.lblLines.Spring = true;
@@ -240,22 +211,6 @@
       this.tabPage1.TabIndex = 0;
       this.tabPage1.Text = "Orders Simplifier";
       // 
-      // textBox1
-      // 
-      this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::OrderSimplifier.Properties.Settings.Default, "SourceText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
-      this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox1.Location = new System.Drawing.Point(3, 3);
-      this.textBox1.Multiline = true;
-      this.textBox1.Name = "textBox1";
-      this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.textBox1.Size = new System.Drawing.Size(186, 334);
-      this.textBox1.TabIndex = 0;
-      this.textBox1.Text = global::OrderSimplifier.Properties.Settings.Default.SourceText;
-      this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseClick);
-      this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-      this.textBox1.Enter += new System.EventHandler(this.TextBox1_Enter);
-      // 
       // tabPage2
       // 
       this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -284,20 +239,6 @@
       this.groupBox1.Size = new System.Drawing.Size(115, 141);
       this.groupBox1.TabIndex = 10;
       this.groupBox1.TabStop = false;
-      // 
-      // rdLF
-      // 
-      this.rdLF.AutoSize = true;
-      this.rdLF.Checked = global::OrderSimplifier.Properties.Settings.Default.SimulationLF;
-      this.rdLF.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimulationLF", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.rdLF.Location = new System.Drawing.Point(26, 40);
-      this.rdLF.Name = "rdLF";
-      this.rdLF.Size = new System.Drawing.Size(50, 28);
-      this.rdLF.TabIndex = 0;
-      this.rdLF.TabStop = true;
-      this.rdLF.Text = "LF";
-      this.rdLF.UseVisualStyleBackColor = true;
-      this.rdLF.CheckedChanged += new System.EventHandler(this.RdLF_CheckedChanged);
       // 
       // rdSF
       // 
@@ -346,77 +287,6 @@
       this.label2.TabIndex = 5;
       this.label2.Text = "Start Index:";
       // 
-      // numVolume
-      // 
-      this.numVolume.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimulationContracts", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.numVolume.Location = new System.Drawing.Point(184, 131);
-      this.numVolume.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-      this.numVolume.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.numVolume.Name = "numVolume";
-      this.numVolume.Size = new System.Drawing.Size(120, 29);
-      this.numVolume.TabIndex = 8;
-      this.numVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      this.numVolume.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationContracts;
-      this.numVolume.ValueChanged += new System.EventHandler(this.NumVolume_ValueChanged);
-      // 
-      // numCount
-      // 
-      this.numCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimulationCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.numCount.Location = new System.Drawing.Point(184, 277);
-      this.numCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.numCount.Name = "numCount";
-      this.numCount.Size = new System.Drawing.Size(120, 29);
-      this.numCount.TabIndex = 4;
-      this.numCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      this.numCount.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationCount;
-      this.numCount.ValueChanged += new System.EventHandler(this.NumCount_ValueChanged);
-      // 
-      // numSteps
-      // 
-      this.numSteps.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimulationSteps", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.numSteps.DecimalPlaces = 1;
-      this.numSteps.Location = new System.Drawing.Point(184, 204);
-      this.numSteps.Name = "numSteps";
-      this.numSteps.Size = new System.Drawing.Size(120, 29);
-      this.numSteps.TabIndex = 3;
-      this.numSteps.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      this.numSteps.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationSteps;
-      this.numSteps.ValueChanged += new System.EventHandler(this.NumSteps_ValueChanged);
-      // 
-      // numStartIndex
-      // 
-      this.numStartIndex.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimulationStartIndex", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.numStartIndex.DecimalPlaces = 1;
-      this.numStartIndex.Location = new System.Drawing.Point(184, 54);
-      this.numStartIndex.Maximum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
-      this.numStartIndex.Minimum = new decimal(new int[] {
-            950,
-            0,
-            0,
-            0});
-      this.numStartIndex.Name = "numStartIndex";
-      this.numStartIndex.Size = new System.Drawing.Size(120, 29);
-      this.numStartIndex.TabIndex = 2;
-      this.numStartIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      this.numStartIndex.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationStartIndex;
-      this.numStartIndex.ValueChanged += new System.EventHandler(this.NumStartIndex_ValueChanged);
-      // 
       // menuStrip1
       // 
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -442,6 +312,233 @@
       this.exitToolStripMenuItem.Text = "E&xit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
       // 
+      // panel4
+      // 
+      this.panel4.Controls.Add(this.chkAutoCopy);
+      this.panel4.Controls.Add(this.checkBox1);
+      this.panel4.Controls.Add(this.numericUpDown1);
+      this.panel4.Controls.Add(this.label6);
+      this.panel4.Controls.Add(this.button2);
+      this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.panel4.Location = new System.Drawing.Point(0, 0);
+      this.panel4.Name = "panel4";
+      this.panel4.Size = new System.Drawing.Size(184, 334);
+      this.panel4.TabIndex = 4;
+      // 
+      // label6
+      // 
+      this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.label6.AutoSize = true;
+      this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.label6.Location = new System.Drawing.Point(17, 13);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(32, 37);
+      this.label6.TabIndex = 2;
+      this.label6.Text = "x";
+      // 
+      // button2
+      // 
+      this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.button2.Location = new System.Drawing.Point(6, 56);
+      this.button2.Name = "button2";
+      this.button2.Size = new System.Drawing.Size(172, 57);
+      this.button2.TabIndex = 1;
+      this.button2.Text = "Simplify >>";
+      this.button2.UseVisualStyleBackColor = true;
+      // 
+      // chkAutoCopy
+      // 
+      this.chkAutoCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.chkAutoCopy.AutoSize = true;
+      this.chkAutoCopy.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoCopy;
+      this.chkAutoCopy.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chkAutoCopy.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoCopy", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.chkAutoCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.chkAutoCopy.Location = new System.Drawing.Point(6, 309);
+      this.chkAutoCopy.Name = "chkAutoCopy";
+      this.chkAutoCopy.Size = new System.Drawing.Size(149, 19);
+      this.chkAutoCopy.TabIndex = 3;
+      this.chkAutoCopy.Text = "Auto Copy to Clipboard";
+      this.chkAutoCopy.UseVisualStyleBackColor = true;
+      // 
+      // checkBox1
+      // 
+      this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.checkBox1.AutoSize = true;
+      this.checkBox1.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
+      this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.checkBox1.Location = new System.Drawing.Point(6, 284);
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.Size = new System.Drawing.Size(113, 19);
+      this.checkBox1.TabIndex = 2;
+      this.checkBox1.Text = "Auto Select Text";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
+      // numericUpDown1
+      // 
+      this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimplifyMultiplier", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.numericUpDown1.Location = new System.Drawing.Point(55, 18);
+      this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+      this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.numericUpDown1.Name = "numericUpDown1";
+      this.numericUpDown1.Size = new System.Drawing.Size(123, 32);
+      this.numericUpDown1.TabIndex = 1;
+      this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.numericUpDown1.Value = global::OrderSimplifier.Properties.Settings.Default.SimplifyMultiplier;
+      // 
+      // chkAutoSelectText
+      // 
+      this.chkAutoSelectText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.chkAutoSelectText.AutoSize = true;
+      this.chkAutoSelectText.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
+      this.chkAutoSelectText.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chkAutoSelectText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.chkAutoSelectText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.chkAutoSelectText.Location = new System.Drawing.Point(6, 312);
+      this.chkAutoSelectText.Name = "chkAutoSelectText";
+      this.chkAutoSelectText.Size = new System.Drawing.Size(113, 19);
+      this.chkAutoSelectText.TabIndex = 3;
+      this.chkAutoSelectText.Text = "Auto Select Text";
+      this.chkAutoSelectText.UseVisualStyleBackColor = true;
+      // 
+      // num
+      // 
+      this.num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.num.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimplifyMultiplier", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.num.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.num.Location = new System.Drawing.Point(55, 18);
+      this.num.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+      this.num.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.num.Name = "num";
+      this.num.Size = new System.Drawing.Size(123, 32);
+      this.num.TabIndex = 1;
+      this.num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.num.Value = global::OrderSimplifier.Properties.Settings.Default.SimplifyMultiplier;
+      this.num.ValueChanged += new System.EventHandler(this.Num_ValueChanged);
+      // 
+      // textBox1
+      // 
+      this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::OrderSimplifier.Properties.Settings.Default, "SourceText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
+      this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBox1.Location = new System.Drawing.Point(3, 3);
+      this.textBox1.Multiline = true;
+      this.textBox1.Name = "textBox1";
+      this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+      this.textBox1.Size = new System.Drawing.Size(186, 334);
+      this.textBox1.TabIndex = 0;
+      this.textBox1.Text = global::OrderSimplifier.Properties.Settings.Default.SourceText;
+      this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseClick);
+      this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+      this.textBox1.Enter += new System.EventHandler(this.TextBox1_Enter);
+      // 
+      // rdLF
+      // 
+      this.rdLF.AutoSize = true;
+      this.rdLF.Checked = global::OrderSimplifier.Properties.Settings.Default.SimulationLF;
+      this.rdLF.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimulationLF", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.rdLF.Location = new System.Drawing.Point(26, 40);
+      this.rdLF.Name = "rdLF";
+      this.rdLF.Size = new System.Drawing.Size(50, 28);
+      this.rdLF.TabIndex = 0;
+      this.rdLF.TabStop = true;
+      this.rdLF.Text = "LF";
+      this.rdLF.UseVisualStyleBackColor = true;
+      this.rdLF.CheckedChanged += new System.EventHandler(this.RdLF_CheckedChanged);
+      // 
+      // numVolume
+      // 
+      this.numVolume.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimulationContracts", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.numVolume.Location = new System.Drawing.Point(184, 131);
+      this.numVolume.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+      this.numVolume.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.numVolume.Name = "numVolume";
+      this.numVolume.Size = new System.Drawing.Size(120, 29);
+      this.numVolume.TabIndex = 12;
+      this.numVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.numVolume.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationContracts;
+      this.numVolume.ValueChanged += new System.EventHandler(this.NumVolume_ValueChanged);
+      // 
+      // numCount
+      // 
+      this.numCount.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimulationCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.numCount.Location = new System.Drawing.Point(184, 277);
+      this.numCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.numCount.Name = "numCount";
+      this.numCount.Size = new System.Drawing.Size(120, 29);
+      this.numCount.TabIndex = 14;
+      this.numCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.numCount.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationCount;
+      this.numCount.ValueChanged += new System.EventHandler(this.NumCount_ValueChanged);
+      // 
+      // numSteps
+      // 
+      this.numSteps.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimulationSteps", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.numSteps.DecimalPlaces = 1;
+      this.numSteps.Location = new System.Drawing.Point(184, 204);
+      this.numSteps.Name = "numSteps";
+      this.numSteps.Size = new System.Drawing.Size(120, 29);
+      this.numSteps.TabIndex = 13;
+      this.numSteps.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.numSteps.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationSteps;
+      this.numSteps.ValueChanged += new System.EventHandler(this.NumSteps_ValueChanged);
+      // 
+      // numStartIndex
+      // 
+      this.numStartIndex.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimulationStartIndex", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.numStartIndex.DecimalPlaces = 1;
+      this.numStartIndex.Location = new System.Drawing.Point(184, 54);
+      this.numStartIndex.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+      this.numStartIndex.Minimum = new decimal(new int[] {
+            950,
+            0,
+            0,
+            0});
+      this.numStartIndex.Name = "numStartIndex";
+      this.numStartIndex.Size = new System.Drawing.Size(120, 29);
+      this.numStartIndex.TabIndex = 11;
+      this.numStartIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.numStartIndex.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationStartIndex;
+      this.numStartIndex.ValueChanged += new System.EventHandler(this.NumStartIndex_ValueChanged);
+      // 
       // Form1
       // 
       this.AcceptButton = this.button1;
@@ -456,6 +553,7 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MainMenuStrip = this.menuStrip1;
+      this.MaximizeBox = false;
       this.MinimumSize = new System.Drawing.Size(550, 39);
       this.Name = "Form1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -464,7 +562,6 @@
       this.Load += new System.EventHandler(this.Form1_Load);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
       this.statusStrip1.ResumeLayout(false);
       this.statusStrip1.PerformLayout();
       this.panel2.ResumeLayout(false);
@@ -477,12 +574,16 @@
       this.tabPage2.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      this.menuStrip1.ResumeLayout(false);
+      this.menuStrip1.PerformLayout();
+      this.panel4.ResumeLayout(false);
+      this.panel4.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numVolume)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numSteps)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numStartIndex)).EndInit();
-      this.menuStrip1.ResumeLayout(false);
-      this.menuStrip1.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -519,6 +620,12 @@
     private System.Windows.Forms.LinkLabel linkLabel1;
     private System.Windows.Forms.CheckBox chkAutoSelectText;
     private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.Panel panel4;
+    private System.Windows.Forms.CheckBox chkAutoCopy;
+    private System.Windows.Forms.CheckBox checkBox1;
+    private System.Windows.Forms.NumericUpDown numericUpDown1;
+    private System.Windows.Forms.Label label6;
+    private System.Windows.Forms.Button button2;
   }
 }
 

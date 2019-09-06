@@ -97,13 +97,20 @@ namespace OrderSimplifier
 
       lblLines.Text = $"Lines: {txtOutput.Lines.Length}";
 
-      txtOutput.Focus();
-      txtOutput.SelectAll();
+      if (chkAutoSelectText.Checked)
+      {
+        txtOutput.Focus();
+        txtOutput.SelectAll();
+      }
+
       try
       {
-        Clipboard.SetText(txtOutput.Text);
+        if (chkAutoCopy.Checked)
+        {
+          Clipboard.SetText(txtOutput.Text);
 
-        s2.Play();
+          s2.Play();
+        }
       }
       catch (Exception ex)
       {

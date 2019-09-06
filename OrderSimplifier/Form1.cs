@@ -218,7 +218,7 @@ namespace OrderSimplifier
       string version = "";
       if (ApplicationDeployment.IsNetworkDeployed)
       {
-        version = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(3);
+        version = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
       }
 
       Text = Application.ProductName + " " + version;

@@ -152,12 +152,12 @@
       this.txtOutput.BackColor = System.Drawing.Color.Beige;
       this.txtOutput.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOutput.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtOutput.Location = new System.Drawing.Point(0, 34);
+      this.txtOutput.Location = new System.Drawing.Point(0, 30);
       this.txtOutput.Multiline = true;
       this.txtOutput.Name = "txtOutput";
       this.txtOutput.ReadOnly = true;
       this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.txtOutput.Size = new System.Drawing.Size(183, 341);
+      this.txtOutput.Size = new System.Drawing.Size(183, 345);
       this.txtOutput.TabIndex = 3;
       this.txtOutput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox2_MouseClick);
       // 
@@ -196,17 +196,18 @@
       this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel3.Location = new System.Drawing.Point(0, 0);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(183, 34);
+      this.panel3.Size = new System.Drawing.Size(183, 30);
       this.panel3.TabIndex = 4;
       // 
       // linkLabel1
       // 
       this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.linkLabel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkLabel1.LinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel1.Location = new System.Drawing.Point(0, 0);
       this.linkLabel1.Name = "linkLabel1";
-      this.linkLabel1.Size = new System.Drawing.Size(183, 34);
+      this.linkLabel1.Size = new System.Drawing.Size(183, 30);
       this.linkLabel1.TabIndex = 0;
       this.linkLabel1.TabStop = true;
       this.linkLabel1.Text = "https://OptionsGo.Net";

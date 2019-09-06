@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -104,7 +105,7 @@ namespace OrderSimplifier
 
         s2.Play();
       }
-      catch(Exception ex)
+      catch (Exception ex)
       {
         MessageBox.Show(ex.Message);
       }
@@ -119,10 +120,12 @@ namespace OrderSimplifier
     private void Num_ValueChanged(object sender, EventArgs e)
     {
       Simplify();
-    } 
+    }
 
     private void UpdateLFSF()
     {
+      if (tabControl1.SelectedIndex != 1) return;
+
       string fu = rdLF.Checked ? "LF" : "SF";
       var start = numStartIndex.Value;
       var vol = numVolume.Value;
@@ -210,7 +213,16 @@ namespace OrderSimplifier
       if (!Properties.Settings.Default.SimulationLF)
         rdSF.Checked = true;
 
-      Text += " v" + Application.ProductVersion;
+      tabControl1.SelectedIndex = 0;
+
+      string version = "";
+      if (ApplicationDeployment.IsNetworkDeployed)
+      {
+        version = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(3);
+      }
+
+      Text = Application.ProductName + " " + version;
+      Simplify();
     }
   }
 }

@@ -209,6 +209,8 @@ namespace OrderSimplifier
     {
       if (!Properties.Settings.Default.SimulationLF)
         rdSF.Checked = true;
+
+      Text += " v" + Application.ProductVersion;
     }
   }
 }

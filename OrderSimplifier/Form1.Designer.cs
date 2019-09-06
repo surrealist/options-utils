@@ -30,6 +30,8 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.panel1 = new System.Windows.Forms.Panel();
+      this.chkAutoSelectText = new System.Windows.Forms.CheckBox();
+      this.num = new System.Windows.Forms.NumericUpDown();
       this.label1 = new System.Windows.Forms.Label();
       this.button1 = new System.Windows.Forms.Button();
       this.txtOutput = new System.Windows.Forms.TextBox();
@@ -37,41 +39,39 @@
       this.lblLines = new System.Windows.Forms.ToolStripStatusLabel();
       this.panel2 = new System.Windows.Forms.Panel();
       this.panel3 = new System.Windows.Forms.Panel();
+      this.linkLabel1 = new System.Windows.Forms.LinkLabel();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.textBox1 = new System.Windows.Forms.TextBox();
       this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.rdLF = new System.Windows.Forms.RadioButton();
+      this.rdSF = new System.Windows.Forms.RadioButton();
       this.label5 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
-      this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-      this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      this.chkAutoSelectText = new System.Windows.Forms.CheckBox();
-      this.num = new System.Windows.Forms.NumericUpDown();
       this.numVolume = new System.Windows.Forms.NumericUpDown();
       this.numCount = new System.Windows.Forms.NumericUpDown();
       this.numSteps = new System.Windows.Forms.NumericUpDown();
       this.numStartIndex = new System.Windows.Forms.NumericUpDown();
-      this.rdSF = new System.Windows.Forms.RadioButton();
-      this.rdLF = new System.Windows.Forms.RadioButton();
-      this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+      this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
       this.statusStrip1.SuspendLayout();
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.tabPage1.SuspendLayout();
       this.tabPage2.SuspendLayout();
-      this.menuStrip1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
+      this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.numVolume)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numSteps)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numStartIndex)).BeginInit();
-      this.groupBox1.SuspendLayout();
+      this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
@@ -83,8 +83,45 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panel1.Location = new System.Drawing.Point(189, 3);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(184, 298);
+      this.panel1.Size = new System.Drawing.Size(184, 334);
       this.panel1.TabIndex = 2;
+      // 
+      // chkAutoSelectText
+      // 
+      this.chkAutoSelectText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.chkAutoSelectText.AutoSize = true;
+      this.chkAutoSelectText.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
+      this.chkAutoSelectText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.chkAutoSelectText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.chkAutoSelectText.Location = new System.Drawing.Point(6, 312);
+      this.chkAutoSelectText.Name = "chkAutoSelectText";
+      this.chkAutoSelectText.Size = new System.Drawing.Size(113, 19);
+      this.chkAutoSelectText.TabIndex = 3;
+      this.chkAutoSelectText.Text = "Auto Select Text";
+      this.chkAutoSelectText.UseVisualStyleBackColor = true;
+      // 
+      // num
+      // 
+      this.num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.num.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimplifyMultiplier", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.num.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.num.Location = new System.Drawing.Point(55, 18);
+      this.num.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+      this.num.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.num.Name = "num";
+      this.num.Size = new System.Drawing.Size(123, 32);
+      this.num.TabIndex = 1;
+      this.num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.num.Value = global::OrderSimplifier.Properties.Settings.Default.SimplifyMultiplier;
+      this.num.ValueChanged += new System.EventHandler(this.Num_ValueChanged);
       // 
       // label1
       // 
@@ -162,6 +199,20 @@
       this.panel3.Size = new System.Drawing.Size(183, 34);
       this.panel3.TabIndex = 4;
       // 
+      // linkLabel1
+      // 
+      this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.linkLabel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkLabel1.LinkColor = System.Drawing.Color.MediumBlue;
+      this.linkLabel1.Location = new System.Drawing.Point(0, 0);
+      this.linkLabel1.Name = "linkLabel1";
+      this.linkLabel1.Size = new System.Drawing.Size(183, 34);
+      this.linkLabel1.TabIndex = 0;
+      this.linkLabel1.TabStop = true;
+      this.linkLabel1.Text = "https://OptionsGo.Net";
+      this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
+      // 
       // tabControl1
       // 
       this.tabControl1.Controls.Add(this.tabPage1);
@@ -184,9 +235,25 @@
       this.tabPage1.Location = new System.Drawing.Point(4, 31);
       this.tabPage1.Name = "tabPage1";
       this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage1.Size = new System.Drawing.Size(376, 304);
+      this.tabPage1.Size = new System.Drawing.Size(376, 340);
       this.tabPage1.TabIndex = 0;
       this.tabPage1.Text = "Orders Simplifier";
+      // 
+      // textBox1
+      // 
+      this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::OrderSimplifier.Properties.Settings.Default, "SourceText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
+      this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBox1.Location = new System.Drawing.Point(3, 3);
+      this.textBox1.Multiline = true;
+      this.textBox1.Name = "textBox1";
+      this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+      this.textBox1.Size = new System.Drawing.Size(186, 334);
+      this.textBox1.TabIndex = 0;
+      this.textBox1.Text = global::OrderSimplifier.Properties.Settings.Default.SourceText;
+      this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseClick);
+      this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+      this.textBox1.Enter += new System.EventHandler(this.TextBox1_Enter);
       // 
       // tabPage2
       // 
@@ -206,6 +273,41 @@
       this.tabPage2.Size = new System.Drawing.Size(376, 340);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "Fu Simulation";
+      // 
+      // groupBox1
+      // 
+      this.groupBox1.Controls.Add(this.rdLF);
+      this.groupBox1.Controls.Add(this.rdSF);
+      this.groupBox1.Location = new System.Drawing.Point(37, 76);
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.Size = new System.Drawing.Size(115, 141);
+      this.groupBox1.TabIndex = 10;
+      this.groupBox1.TabStop = false;
+      // 
+      // rdLF
+      // 
+      this.rdLF.AutoSize = true;
+      this.rdLF.Checked = global::OrderSimplifier.Properties.Settings.Default.SimulationLF;
+      this.rdLF.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimulationLF", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.rdLF.Location = new System.Drawing.Point(26, 40);
+      this.rdLF.Name = "rdLF";
+      this.rdLF.Size = new System.Drawing.Size(50, 28);
+      this.rdLF.TabIndex = 0;
+      this.rdLF.TabStop = true;
+      this.rdLF.Text = "LF";
+      this.rdLF.UseVisualStyleBackColor = true;
+      this.rdLF.CheckedChanged += new System.EventHandler(this.RdLF_CheckedChanged);
+      // 
+      // rdSF
+      // 
+      this.rdSF.AutoSize = true;
+      this.rdSF.Location = new System.Drawing.Point(26, 85);
+      this.rdSF.Name = "rdSF";
+      this.rdSF.Size = new System.Drawing.Size(52, 28);
+      this.rdSF.TabIndex = 1;
+      this.rdSF.Text = "SF";
+      this.rdSF.UseVisualStyleBackColor = true;
+      this.rdSF.CheckedChanged += new System.EventHandler(this.RdSF_CheckedChanged);
       // 
       // label5
       // 
@@ -242,98 +344,6 @@
       this.label2.Size = new System.Drawing.Size(103, 24);
       this.label2.TabIndex = 5;
       this.label2.Text = "Start Index:";
-      // 
-      // menuStrip1
-      // 
-      this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-      this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-      this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(567, 24);
-      this.menuStrip1.TabIndex = 8;
-      this.menuStrip1.Text = "menuStrip1";
-      // 
-      // fileToolStripMenuItem
-      // 
-      this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-      this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-      this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-      this.fileToolStripMenuItem.Text = "&File";
-      // 
-      // exitToolStripMenuItem
-      // 
-      this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-      this.exitToolStripMenuItem.Text = "E&xit";
-      this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-      // 
-      // linkLabel1
-      // 
-      this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.linkLabel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.linkLabel1.LinkColor = System.Drawing.Color.DodgerBlue;
-      this.linkLabel1.Location = new System.Drawing.Point(0, 0);
-      this.linkLabel1.Name = "linkLabel1";
-      this.linkLabel1.Size = new System.Drawing.Size(183, 34);
-      this.linkLabel1.TabIndex = 0;
-      this.linkLabel1.TabStop = true;
-      this.linkLabel1.Text = "https://OptionsGo.Net";
-      this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
-      // 
-      // textBox1
-      // 
-      this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::OrderSimplifier.Properties.Settings.Default, "SourceText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
-      this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox1.Location = new System.Drawing.Point(3, 3);
-      this.textBox1.Multiline = true;
-      this.textBox1.Name = "textBox1";
-      this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.textBox1.Size = new System.Drawing.Size(186, 298);
-      this.textBox1.TabIndex = 0;
-      this.textBox1.Text = global::OrderSimplifier.Properties.Settings.Default.SourceText;
-      this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseClick);
-      this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-      this.textBox1.Enter += new System.EventHandler(this.TextBox1_Enter);
-      // 
-      // chkAutoSelectText
-      // 
-      this.chkAutoSelectText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.chkAutoSelectText.AutoSize = true;
-      this.chkAutoSelectText.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
-      this.chkAutoSelectText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.chkAutoSelectText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.chkAutoSelectText.Location = new System.Drawing.Point(3, 276);
-      this.chkAutoSelectText.Name = "chkAutoSelectText";
-      this.chkAutoSelectText.Size = new System.Drawing.Size(113, 19);
-      this.chkAutoSelectText.TabIndex = 3;
-      this.chkAutoSelectText.Text = "Auto Select Text";
-      this.chkAutoSelectText.UseVisualStyleBackColor = true;
-      // 
-      // num
-      // 
-      this.num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.num.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimplifyMultiplier", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.num.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.num.Location = new System.Drawing.Point(55, 18);
-      this.num.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-      this.num.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.num.Name = "num";
-      this.num.Size = new System.Drawing.Size(123, 32);
-      this.num.TabIndex = 1;
-      this.num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      this.num.Value = global::OrderSimplifier.Properties.Settings.Default.SimplifyMultiplier;
-      this.num.ValueChanged += new System.EventHandler(this.Num_ValueChanged);
       // 
       // numVolume
       // 
@@ -406,40 +416,30 @@
       this.numStartIndex.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationStartIndex;
       this.numStartIndex.ValueChanged += new System.EventHandler(this.NumStartIndex_ValueChanged);
       // 
-      // rdSF
+      // menuStrip1
       // 
-      this.rdSF.AutoSize = true;
-      this.rdSF.Location = new System.Drawing.Point(26, 85);
-      this.rdSF.Name = "rdSF";
-      this.rdSF.Size = new System.Drawing.Size(52, 28);
-      this.rdSF.TabIndex = 1;
-      this.rdSF.Text = "SF";
-      this.rdSF.UseVisualStyleBackColor = true;
-      this.rdSF.CheckedChanged += new System.EventHandler(this.RdSF_CheckedChanged);
+      this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+      this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+      this.menuStrip1.Name = "menuStrip1";
+      this.menuStrip1.Size = new System.Drawing.Size(567, 24);
+      this.menuStrip1.TabIndex = 8;
+      this.menuStrip1.Text = "menuStrip1";
       // 
-      // rdLF
+      // fileToolStripMenuItem
       // 
-      this.rdLF.AutoSize = true;
-      this.rdLF.Checked = global::OrderSimplifier.Properties.Settings.Default.SimulationLF;
-      this.rdLF.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimulationLF", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.rdLF.Location = new System.Drawing.Point(26, 40);
-      this.rdLF.Name = "rdLF";
-      this.rdLF.Size = new System.Drawing.Size(50, 28);
-      this.rdLF.TabIndex = 0;
-      this.rdLF.TabStop = true;
-      this.rdLF.Text = "LF";
-      this.rdLF.UseVisualStyleBackColor = true;
-      this.rdLF.CheckedChanged += new System.EventHandler(this.RdLF_CheckedChanged);
+      this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+      this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+      this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+      this.fileToolStripMenuItem.Text = "&File";
       // 
-      // groupBox1
+      // exitToolStripMenuItem
       // 
-      this.groupBox1.Controls.Add(this.rdLF);
-      this.groupBox1.Controls.Add(this.rdSF);
-      this.groupBox1.Location = new System.Drawing.Point(37, 76);
-      this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(115, 141);
-      this.groupBox1.TabIndex = 10;
-      this.groupBox1.TabStop = false;
+      this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+      this.exitToolStripMenuItem.Text = "E&xit";
+      this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
       // 
       // Form1
       // 
@@ -463,6 +463,7 @@
       this.Load += new System.EventHandler(this.Form1_Load);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
       this.statusStrip1.ResumeLayout(false);
       this.statusStrip1.PerformLayout();
       this.panel2.ResumeLayout(false);
@@ -473,15 +474,14 @@
       this.tabPage1.PerformLayout();
       this.tabPage2.ResumeLayout(false);
       this.tabPage2.PerformLayout();
-      this.menuStrip1.ResumeLayout(false);
-      this.menuStrip1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
+      this.groupBox1.ResumeLayout(false);
+      this.groupBox1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.numVolume)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numSteps)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numStartIndex)).EndInit();
-      this.groupBox1.ResumeLayout(false);
-      this.groupBox1.PerformLayout();
+      this.menuStrip1.ResumeLayout(false);
+      this.menuStrip1.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 

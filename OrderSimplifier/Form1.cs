@@ -37,9 +37,11 @@ namespace OrderSimplifier
 
     private string Simplify1(string text, int units)
     {
+      var averagePremium = chkAverage.Checked;
       var commands = new[] { "LF", "SF", "LC", "LP", "SC", "SP" };
       string[] t = text.Split('\n');
       var list = new Dictionary<string, Item>(256);
+      string key;
 
       for (int i = 0; i < t.Length; i++)
       {
@@ -74,15 +76,42 @@ namespace OrderSimplifier
           item.Volume = Convert.ToInt32(data[4]) * units;
         }
 
-        var key = $"{item.Name} {item.Strike} {item.Price:n1}";
+        if (averagePremium)
+        {
+          key = $"{item.Name[1]}{item.Name[0]} {item.Strike} {item.Price:000.0}";
+        }
+        else
+        {
+          key = $"{item.Name[1]}{item.Name[0]} {item.Strike} {item.Price:000.0}";
+        }
+
         if (list.ContainsKey(key)) list[key].Volume += item.Volume;
         else list.Add(key, item);
       }
 
-      var q = from item in list
-              orderby item.Value.Strike, item.Value.Name, item.Value.Price
-              select item.Value.ToString();
-      return string.Join(Environment.NewLine, q);
+      if (averagePremium)
+      {
+        var q = from item in list
+                orderby item.Value.Strike, item.Key
+                group item.Value by new { item.Value.Strike, item.Value.Name } into g
+                select new Item
+                {
+                  Name = g.FirstOrDefault()?.Name,
+                  Strike = g.FirstOrDefault()?.Strike ?? 0,
+                  Price = g.Sum(x => x.Price * x.Volume) / g.Sum(x => x.Volume),
+                  Volume = g.Sum(x => x.Volume)
+                };
+
+        var items = q.ToList();
+        return string.Join(Environment.NewLine, q);
+      }
+      else
+      {
+        var q = from item in list
+                orderby item.Value.Strike, item.Value.Name, item.Value.Price
+                select item.Value.ToString();
+        return string.Join(Environment.NewLine, q);
+      }
     }
 
     private void TextBox1_Enter(object sender, EventArgs e)
@@ -229,6 +258,11 @@ namespace OrderSimplifier
       }
 
       Text = Application.ProductName + " " + version;
+      Simplify();
+    }
+
+    private void ChkAverage_CheckedChanged(object sender, EventArgs e)
+    {
       Simplify();
     }
   }

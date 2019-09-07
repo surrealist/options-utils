@@ -42,5 +42,8 @@ SC 1175 @0.8 x 1
     <Setting Name="SimplifyAutoCopy" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="SimplifyAveragePremium" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

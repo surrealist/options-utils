@@ -143,5 +143,17 @@ namespace OrderSimplifier.Properties {
                 this["SimplifyAutoCopy"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SimplifyAveragePremium {
+            get {
+                return ((bool)(this["SimplifyAveragePremium"]));
+            }
+            set {
+                this["SimplifyAveragePremium"] = value;
+            }
+        }
     }
 }

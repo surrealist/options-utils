@@ -30,6 +30,8 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.panel1 = new System.Windows.Forms.Panel();
+      this.panel4 = new System.Windows.Forms.Panel();
+      this.label6 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.button1 = new System.Windows.Forms.Button();
       this.txtOutput = new System.Windows.Forms.TextBox();
@@ -50,14 +52,11 @@
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.panel4 = new System.Windows.Forms.Panel();
-      this.label6 = new System.Windows.Forms.Label();
-      this.button2 = new System.Windows.Forms.Button();
+      this.num = new System.Windows.Forms.NumericUpDown();
+      this.chkAverage = new System.Windows.Forms.CheckBox();
       this.chkAutoCopy = new System.Windows.Forms.CheckBox();
       this.checkBox1 = new System.Windows.Forms.CheckBox();
-      this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
       this.chkAutoSelectText = new System.Windows.Forms.CheckBox();
-      this.num = new System.Windows.Forms.NumericUpDown();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.rdLF = new System.Windows.Forms.RadioButton();
       this.numVolume = new System.Windows.Forms.NumericUpDown();
@@ -65,6 +64,7 @@
       this.numSteps = new System.Windows.Forms.NumericUpDown();
       this.numStartIndex = new System.Windows.Forms.NumericUpDown();
       this.panel1.SuspendLayout();
+      this.panel4.SuspendLayout();
       this.statusStrip1.SuspendLayout();
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
@@ -73,8 +73,6 @@
       this.tabPage2.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.menuStrip1.SuspendLayout();
-      this.panel4.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numVolume)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
@@ -84,23 +82,46 @@
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.num);
+      this.panel1.Controls.Add(this.button1);
       this.panel1.Controls.Add(this.panel4);
       this.panel1.Controls.Add(this.chkAutoSelectText);
-      this.panel1.Controls.Add(this.num);
       this.panel1.Controls.Add(this.label1);
-      this.panel1.Controls.Add(this.button1);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panel1.Location = new System.Drawing.Point(189, 3);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(184, 334);
+      this.panel1.Size = new System.Drawing.Size(247, 340);
       this.panel1.TabIndex = 2;
+      // 
+      // panel4
+      // 
+      this.panel4.Controls.Add(this.chkAverage);
+      this.panel4.Controls.Add(this.chkAutoCopy);
+      this.panel4.Controls.Add(this.checkBox1);
+      this.panel4.Controls.Add(this.label6);
+      this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.panel4.Location = new System.Drawing.Point(0, 0);
+      this.panel4.Name = "panel4";
+      this.panel4.Size = new System.Drawing.Size(247, 340);
+      this.panel4.TabIndex = 4;
+      // 
+      // label6
+      // 
+      this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.label6.AutoSize = true;
+      this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.label6.Location = new System.Drawing.Point(80, 13);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(32, 37);
+      this.label6.TabIndex = 2;
+      this.label6.Text = "x";
       // 
       // label1
       // 
       this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.label1.Location = new System.Drawing.Point(17, 13);
+      this.label1.Location = new System.Drawing.Point(80, 13);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(32, 37);
       this.label1.TabIndex = 2;
@@ -113,7 +134,7 @@
       this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
       this.button1.Location = new System.Drawing.Point(6, 56);
       this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(172, 57);
+      this.button1.Size = new System.Drawing.Size(235, 57);
       this.button1.TabIndex = 0;
       this.button1.Text = "Simplify >>";
       this.button1.UseVisualStyleBackColor = true;
@@ -129,7 +150,7 @@
       this.txtOutput.Name = "txtOutput";
       this.txtOutput.ReadOnly = true;
       this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.txtOutput.Size = new System.Drawing.Size(183, 345);
+      this.txtOutput.Size = new System.Drawing.Size(214, 351);
       this.txtOutput.TabIndex = 3;
       this.txtOutput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox2_MouseClick);
       // 
@@ -137,9 +158,9 @@
       // 
       this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblLines});
-      this.statusStrip1.Location = new System.Drawing.Point(0, 399);
+      this.statusStrip1.Location = new System.Drawing.Point(0, 405);
       this.statusStrip1.Name = "statusStrip1";
-      this.statusStrip1.Size = new System.Drawing.Size(567, 22);
+      this.statusStrip1.Size = new System.Drawing.Size(661, 22);
       this.statusStrip1.SizingGrip = false;
       this.statusStrip1.TabIndex = 5;
       this.statusStrip1.Text = "statusStrip1";
@@ -147,7 +168,7 @@
       // lblLines
       // 
       this.lblLines.Name = "lblLines";
-      this.lblLines.Size = new System.Drawing.Size(552, 17);
+      this.lblLines.Size = new System.Drawing.Size(646, 17);
       this.lblLines.Spring = true;
       this.lblLines.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
@@ -156,9 +177,9 @@
       this.panel2.Controls.Add(this.txtOutput);
       this.panel2.Controls.Add(this.panel3);
       this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-      this.panel2.Location = new System.Drawing.Point(384, 24);
+      this.panel2.Location = new System.Drawing.Point(447, 24);
       this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(183, 375);
+      this.panel2.Size = new System.Drawing.Size(214, 381);
       this.panel2.TabIndex = 6;
       // 
       // panel3
@@ -167,7 +188,7 @@
       this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel3.Location = new System.Drawing.Point(0, 0);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(183, 30);
+      this.panel3.Size = new System.Drawing.Size(214, 30);
       this.panel3.TabIndex = 4;
       // 
       // linkLabel1
@@ -178,7 +199,7 @@
       this.linkLabel1.LinkColor = System.Drawing.Color.MediumBlue;
       this.linkLabel1.Location = new System.Drawing.Point(0, 0);
       this.linkLabel1.Name = "linkLabel1";
-      this.linkLabel1.Size = new System.Drawing.Size(183, 30);
+      this.linkLabel1.Size = new System.Drawing.Size(214, 30);
       this.linkLabel1.TabIndex = 0;
       this.linkLabel1.TabStop = true;
       this.linkLabel1.Text = "https://OptionsGo.Net";
@@ -195,7 +216,7 @@
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.Padding = new System.Drawing.Point(9, 2);
       this.tabControl1.SelectedIndex = 0;
-      this.tabControl1.Size = new System.Drawing.Size(384, 375);
+      this.tabControl1.Size = new System.Drawing.Size(447, 381);
       this.tabControl1.TabIndex = 7;
       this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.TabControl1_SelectedIndexChanged);
       // 
@@ -207,7 +228,7 @@
       this.tabPage1.Location = new System.Drawing.Point(4, 31);
       this.tabPage1.Name = "tabPage1";
       this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage1.Size = new System.Drawing.Size(376, 340);
+      this.tabPage1.Size = new System.Drawing.Size(439, 346);
       this.tabPage1.TabIndex = 0;
       this.tabPage1.Text = "Orders Simplifier";
       // 
@@ -226,7 +247,7 @@
       this.tabPage2.Location = new System.Drawing.Point(4, 31);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(376, 340);
+      this.tabPage2.Size = new System.Drawing.Size(386, 345);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "Fu Simulation";
       // 
@@ -293,7 +314,7 @@
             this.fileToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(567, 24);
+      this.menuStrip1.Size = new System.Drawing.Size(661, 24);
       this.menuStrip1.TabIndex = 8;
       this.menuStrip1.Text = "menuStrip1";
       // 
@@ -312,115 +333,12 @@
       this.exitToolStripMenuItem.Text = "E&xit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
       // 
-      // panel4
-      // 
-      this.panel4.Controls.Add(this.chkAutoCopy);
-      this.panel4.Controls.Add(this.checkBox1);
-      this.panel4.Controls.Add(this.numericUpDown1);
-      this.panel4.Controls.Add(this.label6);
-      this.panel4.Controls.Add(this.button2);
-      this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panel4.Location = new System.Drawing.Point(0, 0);
-      this.panel4.Name = "panel4";
-      this.panel4.Size = new System.Drawing.Size(184, 334);
-      this.panel4.TabIndex = 4;
-      // 
-      // label6
-      // 
-      this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.label6.AutoSize = true;
-      this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.label6.Location = new System.Drawing.Point(17, 13);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(32, 37);
-      this.label6.TabIndex = 2;
-      this.label6.Text = "x";
-      // 
-      // button2
-      // 
-      this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-      this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.button2.Location = new System.Drawing.Point(6, 56);
-      this.button2.Name = "button2";
-      this.button2.Size = new System.Drawing.Size(172, 57);
-      this.button2.TabIndex = 1;
-      this.button2.Text = "Simplify >>";
-      this.button2.UseVisualStyleBackColor = true;
-      // 
-      // chkAutoCopy
-      // 
-      this.chkAutoCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.chkAutoCopy.AutoSize = true;
-      this.chkAutoCopy.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoCopy;
-      this.chkAutoCopy.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chkAutoCopy.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoCopy", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.chkAutoCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.chkAutoCopy.Location = new System.Drawing.Point(6, 309);
-      this.chkAutoCopy.Name = "chkAutoCopy";
-      this.chkAutoCopy.Size = new System.Drawing.Size(149, 19);
-      this.chkAutoCopy.TabIndex = 3;
-      this.chkAutoCopy.Text = "Auto Copy to Clipboard";
-      this.chkAutoCopy.UseVisualStyleBackColor = true;
-      // 
-      // checkBox1
-      // 
-      this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.checkBox1.AutoSize = true;
-      this.checkBox1.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
-      this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.checkBox1.Location = new System.Drawing.Point(6, 284);
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.Size = new System.Drawing.Size(113, 19);
-      this.checkBox1.TabIndex = 2;
-      this.checkBox1.Text = "Auto Select Text";
-      this.checkBox1.UseVisualStyleBackColor = true;
-      // 
-      // numericUpDown1
-      // 
-      this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimplifyMultiplier", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.numericUpDown1.Location = new System.Drawing.Point(55, 18);
-      this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-      this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.numericUpDown1.Name = "numericUpDown1";
-      this.numericUpDown1.Size = new System.Drawing.Size(123, 32);
-      this.numericUpDown1.TabIndex = 1;
-      this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      this.numericUpDown1.Value = global::OrderSimplifier.Properties.Settings.Default.SimplifyMultiplier;
-      // 
-      // chkAutoSelectText
-      // 
-      this.chkAutoSelectText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.chkAutoSelectText.AutoSize = true;
-      this.chkAutoSelectText.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
-      this.chkAutoSelectText.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.chkAutoSelectText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.chkAutoSelectText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.chkAutoSelectText.Location = new System.Drawing.Point(6, 312);
-      this.chkAutoSelectText.Name = "chkAutoSelectText";
-      this.chkAutoSelectText.Size = new System.Drawing.Size(113, 19);
-      this.chkAutoSelectText.TabIndex = 3;
-      this.chkAutoSelectText.Text = "Auto Select Text";
-      this.chkAutoSelectText.UseVisualStyleBackColor = true;
-      // 
       // num
       // 
       this.num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.num.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::OrderSimplifier.Properties.Settings.Default, "SimplifyMultiplier", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.num.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.num.Location = new System.Drawing.Point(55, 18);
+      this.num.Location = new System.Drawing.Point(118, 18);
       this.num.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -438,6 +356,66 @@
       this.num.Value = global::OrderSimplifier.Properties.Settings.Default.SimplifyMultiplier;
       this.num.ValueChanged += new System.EventHandler(this.Num_ValueChanged);
       // 
+      // chkAverage
+      // 
+      this.chkAverage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.chkAverage.AutoSize = true;
+      this.chkAverage.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAveragePremium;
+      this.chkAverage.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAveragePremium", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.chkAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.chkAverage.Location = new System.Drawing.Point(6, 316);
+      this.chkAverage.Name = "chkAverage";
+      this.chkAverage.Size = new System.Drawing.Size(167, 19);
+      this.chkAverage.TabIndex = 4;
+      this.chkAverage.Text = "Average Strike\'s Premium";
+      this.chkAverage.UseVisualStyleBackColor = true;
+      this.chkAverage.CheckedChanged += new System.EventHandler(this.ChkAverage_CheckedChanged);
+      // 
+      // chkAutoCopy
+      // 
+      this.chkAutoCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.chkAutoCopy.AutoSize = true;
+      this.chkAutoCopy.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoCopy;
+      this.chkAutoCopy.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chkAutoCopy.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoCopy", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.chkAutoCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.chkAutoCopy.Location = new System.Drawing.Point(6, 291);
+      this.chkAutoCopy.Name = "chkAutoCopy";
+      this.chkAutoCopy.Size = new System.Drawing.Size(149, 19);
+      this.chkAutoCopy.TabIndex = 3;
+      this.chkAutoCopy.Text = "Auto Copy to Clipboard";
+      this.chkAutoCopy.UseVisualStyleBackColor = true;
+      // 
+      // checkBox1
+      // 
+      this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.checkBox1.AutoSize = true;
+      this.checkBox1.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
+      this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.checkBox1.Location = new System.Drawing.Point(6, 266);
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.Size = new System.Drawing.Size(113, 19);
+      this.checkBox1.TabIndex = 2;
+      this.checkBox1.Text = "Auto Select Text";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
+      // chkAutoSelectText
+      // 
+      this.chkAutoSelectText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.chkAutoSelectText.AutoSize = true;
+      this.chkAutoSelectText.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAutoSelectText;
+      this.chkAutoSelectText.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chkAutoSelectText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.chkAutoSelectText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+      this.chkAutoSelectText.Location = new System.Drawing.Point(6, 318);
+      this.chkAutoSelectText.Name = "chkAutoSelectText";
+      this.chkAutoSelectText.Size = new System.Drawing.Size(113, 19);
+      this.chkAutoSelectText.TabIndex = 3;
+      this.chkAutoSelectText.Text = "Auto Select Text";
+      this.chkAutoSelectText.UseVisualStyleBackColor = true;
+      // 
       // textBox1
       // 
       this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::OrderSimplifier.Properties.Settings.Default, "SourceText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -447,7 +425,7 @@
       this.textBox1.Multiline = true;
       this.textBox1.Name = "textBox1";
       this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.textBox1.Size = new System.Drawing.Size(186, 334);
+      this.textBox1.Size = new System.Drawing.Size(186, 340);
       this.textBox1.TabIndex = 0;
       this.textBox1.Text = global::OrderSimplifier.Properties.Settings.Default.SourceText;
       this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseClick);
@@ -544,16 +522,14 @@
       this.AcceptButton = this.button1;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(567, 421);
+      this.ClientSize = new System.Drawing.Size(661, 427);
       this.Controls.Add(this.tabControl1);
       this.Controls.Add(this.panel2);
       this.Controls.Add(this.menuStrip1);
       this.Controls.Add(this.statusStrip1);
       this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MainMenuStrip = this.menuStrip1;
-      this.MaximizeBox = false;
       this.MinimumSize = new System.Drawing.Size(550, 39);
       this.Name = "Form1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -562,6 +538,8 @@
       this.Load += new System.EventHandler(this.Form1_Load);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
+      this.panel4.ResumeLayout(false);
+      this.panel4.PerformLayout();
       this.statusStrip1.ResumeLayout(false);
       this.statusStrip1.PerformLayout();
       this.panel2.ResumeLayout(false);
@@ -576,9 +554,6 @@
       this.groupBox1.PerformLayout();
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
-      this.panel4.ResumeLayout(false);
-      this.panel4.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numVolume)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numCount)).EndInit();
@@ -623,9 +598,8 @@
     private System.Windows.Forms.Panel panel4;
     private System.Windows.Forms.CheckBox chkAutoCopy;
     private System.Windows.Forms.CheckBox checkBox1;
-    private System.Windows.Forms.NumericUpDown numericUpDown1;
     private System.Windows.Forms.Label label6;
-    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.CheckBox chkAverage;
   }
 }
 

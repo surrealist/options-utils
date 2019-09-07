@@ -21,8 +21,14 @@ namespace OrderSimplifier
       }
       else
       {
-        return $"{Name} {Strike} @{Price:0.0} x {Volume}";
+        return $"{Name} {Strike} @{r0(Price)} x {Volume}";
       } 
+    }
+
+    private string r0(double v)
+    {
+      string s = v.ToString("0.000000");
+      return s;
     }
   }
 }

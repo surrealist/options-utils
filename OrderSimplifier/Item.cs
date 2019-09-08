@@ -17,7 +17,7 @@ namespace OrderSimplifier
     {
       if (Name == "LF" || Name == "SF")
       {
-        return $"{Name} @{Price:0.0} x {Volume}";
+        return $"{Name} @{r0(Price)} x {Volume}";
       }
       else
       {

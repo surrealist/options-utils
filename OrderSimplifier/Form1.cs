@@ -25,6 +25,7 @@ namespace OrderSimplifier
 
     private void Button1_Click(object sender, EventArgs e)
     {
+      AutoCopy();
       Simplify();
     }
 
@@ -32,7 +33,7 @@ namespace OrderSimplifier
     {
       int n = Convert.ToInt32(num.Value);
       txtOutput.Text = Simplify1(textBox1.Text, n);
-      TextBox2_MouseClick(this, null);
+      SelectOutputText();
     }
 
     private string Simplify1(string text, int units)
@@ -122,18 +123,16 @@ namespace OrderSimplifier
 
     private void TextBox2_MouseClick(object sender, MouseEventArgs e)
     {
-      if (string.IsNullOrWhiteSpace(txtOutput.Text)) return;
+      SelectOutputText();
+      AutoCopy();
+    }
 
-      lblLines.Text = $"Lines: {txtOutput.Lines.Length}";
-
-      if (chkAutoSelectText.Checked)
-      {
-        txtOutput.Focus();
-        txtOutput.SelectAll();
-      }
-
+    private void AutoCopy()
+    {
       try
       {
+        if (string.IsNullOrWhiteSpace(txtOutput.Text)) return;
+
         if (chkAutoCopy.Checked)
         {
           Clipboard.SetText(txtOutput.Text);
@@ -144,6 +143,19 @@ namespace OrderSimplifier
       catch (Exception ex)
       {
         MessageBox.Show(ex.Message);
+      }
+    }
+
+    private void SelectOutputText()
+    {
+      if (string.IsNullOrWhiteSpace(txtOutput.Text)) return;
+
+      lblLines.Text = $"Lines: {txtOutput.Lines.Length}";
+
+      if (chkAutoSelectText.Checked)
+      {
+        txtOutput.Focus();
+        txtOutput.SelectAll();
       }
     }
 
@@ -178,7 +190,8 @@ namespace OrderSimplifier
       }
 
       txtOutput.Text = s;
-      TextBox2_MouseClick(this, null);
+      SelectOutputText();
+      //TextBox2_MouseClick(this, null);
     }
 
     #region Tab LF SF
@@ -221,6 +234,7 @@ namespace OrderSimplifier
       {
         case 0: Simplify(); break;
         case 1: UpdateLFSF(); break;
+        case 2: ConfirmationNotes(); break;
       }
     }
 
@@ -265,5 +279,73 @@ namespace OrderSimplifier
     {
       Simplify();
     }
+
+    private void TxtOutput_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnBrokerOrders_Click(object sender, EventArgs e)
+    {
+      ConfirmationNotes();
+    }
+
+    private void ConfirmationNotes()
+    {
+      var lines = txtBrokerOrders.Text.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+      var sb = new StringBuilder();
+
+      try
+      {
+        foreach (var line in lines)
+        {
+          var data = line.Trim().Split(' ');
+          var symbol = data[0];
+          var side = data[2];
+          var volume = int.Parse(data[4]);
+          var price = double.Parse(data[5].Replace(",", ""));
+
+          if (symbol.Length > 6)
+          {
+            var strike = symbol[6] + " " + symbol.Substring(7);
+            var text = $"{side}{strike} @{price:0.0} x {volume}";
+            sb.AppendLine(text);
+          }
+          else if (symbol.Length == 6)
+          {
+            var text = $"{side}F @{price:0.0} x {volume}";
+            sb.AppendLine(text);
+          }
+        }
+
+        txtOutput.Text = sb.ToString();
+      }
+      catch (Exception)
+      {
+        MessageBox.Show("Incorrect text");
+        txtBrokerOrders.SelectAll();
+        txtBrokerOrders.Focus();
+        txtOutput.Text = "";
+      }
+
+      lblLines.Text = $"Lines: {txtOutput.Lines.Length}";
+    }
+
+    private void txtBrokerOrders_Enter(object sender, EventArgs e)
+    {
+      txtBrokerOrders.Focus();
+      txtBrokerOrders.SelectAll();
+    }
+
+    private void txtBrokerOrders_MouseClick(object sender, MouseEventArgs e)
+    {
+      txtBrokerOrders.Focus();
+      txtBrokerOrders.SelectAll();
+    }
   }
 }
+
+// GOH20 BU-20200325-20100 L Open 1 1,611.00 0.00 84.11 5.89 0.00 90.00
+// GOH20 SE-20200325-20101 S Close 1 1,616.80 0.00 84.11 5.89 0.00 90.00
+// GOH20 BU-20200325-20102 L Open 1 1,620.00 0.00 84.11 5.89 0.00 90.00
+// S50H20C775 SH-20200325-20135 S Open 3 4.00 2,400.00 53.28 3.73 0.00 57.01

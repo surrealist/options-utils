@@ -62,12 +62,12 @@
       this.numCount = new System.Windows.Forms.NumericUpDown();
       this.numSteps = new System.Windows.Forms.NumericUpDown();
       this.numStartIndex = new System.Windows.Forms.NumericUpDown();
+      this.tabPage3 = new System.Windows.Forms.TabPage();
+      this.btnBrokerOrders = new System.Windows.Forms.Button();
+      this.txtBrokerOrders = new System.Windows.Forms.TextBox();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.tabPage3 = new System.Windows.Forms.TabPage();
-      this.txtBrokerOrders = new System.Windows.Forms.TextBox();
-      this.btnBrokerOrders = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
       this.panel4.SuspendLayout();
@@ -82,8 +82,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numSteps)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numStartIndex)).BeginInit();
-      this.menuStrip1.SuspendLayout();
       this.tabPage3.SuspendLayout();
+      this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
@@ -96,7 +96,7 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panel1.Location = new System.Drawing.Point(189, 3);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(255, 348);
+      this.panel1.Size = new System.Drawing.Size(255, 330);
       this.panel1.TabIndex = 2;
       // 
       // num
@@ -116,7 +116,7 @@
             0,
             0});
       this.num.Name = "num";
-      this.num.Size = new System.Drawing.Size(123, 32);
+      this.num.Size = new System.Drawing.Size(123, 44);
       this.num.TabIndex = 1;
       this.num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       this.num.Value = global::OrderSimplifier.Properties.Settings.Default.SimplifyMultiplier;
@@ -144,7 +144,7 @@
       this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panel4.Location = new System.Drawing.Point(0, 0);
       this.panel4.Name = "panel4";
-      this.panel4.Size = new System.Drawing.Size(255, 348);
+      this.panel4.Size = new System.Drawing.Size(255, 330);
       this.panel4.TabIndex = 4;
       // 
       // chkAverage
@@ -154,9 +154,9 @@
       this.chkAverage.Checked = global::OrderSimplifier.Properties.Settings.Default.SimplifyAveragePremium;
       this.chkAverage.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAveragePremium", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.chkAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.chkAverage.Location = new System.Drawing.Point(6, 324);
+      this.chkAverage.Location = new System.Drawing.Point(6, 299);
       this.chkAverage.Name = "chkAverage";
-      this.chkAverage.Size = new System.Drawing.Size(167, 19);
+      this.chkAverage.Size = new System.Drawing.Size(242, 26);
       this.chkAverage.TabIndex = 4;
       this.chkAverage.Text = "Average Strike\'s Premium";
       this.chkAverage.UseVisualStyleBackColor = true;
@@ -170,9 +170,9 @@
       this.chkAutoCopy.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chkAutoCopy.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoCopy", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.chkAutoCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.chkAutoCopy.Location = new System.Drawing.Point(6, 299);
+      this.chkAutoCopy.Location = new System.Drawing.Point(6, 274);
       this.chkAutoCopy.Name = "chkAutoCopy";
-      this.chkAutoCopy.Size = new System.Drawing.Size(207, 19);
+      this.chkAutoCopy.Size = new System.Drawing.Size(308, 26);
       this.chkAutoCopy.TabIndex = 3;
       this.chkAutoCopy.Text = "Copy Output to Clipboard on Click";
       this.chkAutoCopy.UseVisualStyleBackColor = true;
@@ -185,9 +185,9 @@
       this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
       this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.checkBox1.Location = new System.Drawing.Point(6, 274);
+      this.checkBox1.Location = new System.Drawing.Point(6, 249);
       this.checkBox1.Name = "checkBox1";
-      this.checkBox1.Size = new System.Drawing.Size(113, 19);
+      this.checkBox1.Size = new System.Drawing.Size(169, 26);
       this.checkBox1.TabIndex = 2;
       this.checkBox1.Text = "Auto Select Text";
       this.checkBox1.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
       this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
       this.label6.Location = new System.Drawing.Point(88, 13);
       this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(32, 37);
+      this.label6.Size = new System.Drawing.Size(48, 55);
       this.label6.TabIndex = 2;
       this.label6.Text = "x";
       // 
@@ -211,9 +211,9 @@
       this.chkAutoSelectText.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chkAutoSelectText.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimplifyAutoSelectText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.chkAutoSelectText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.chkAutoSelectText.Location = new System.Drawing.Point(6, 326);
+      this.chkAutoSelectText.Location = new System.Drawing.Point(6, 301);
       this.chkAutoSelectText.Name = "chkAutoSelectText";
-      this.chkAutoSelectText.Size = new System.Drawing.Size(113, 19);
+      this.chkAutoSelectText.Size = new System.Drawing.Size(169, 26);
       this.chkAutoSelectText.TabIndex = 3;
       this.chkAutoSelectText.Text = "Auto Select Text";
       this.chkAutoSelectText.UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
       this.label1.Location = new System.Drawing.Point(88, 13);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(32, 37);
+      this.label1.Size = new System.Drawing.Size(48, 55);
       this.label1.TabIndex = 2;
       this.label1.Text = "x";
       // 
@@ -241,13 +241,14 @@
       this.txtOutput.Name = "txtOutput";
       this.txtOutput.ReadOnly = true;
       this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.txtOutput.Size = new System.Drawing.Size(210, 322);
+      this.txtOutput.Size = new System.Drawing.Size(210, 313);
       this.txtOutput.TabIndex = 3;
       this.txtOutput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox2_MouseClick);
       this.txtOutput.TextChanged += new System.EventHandler(this.TxtOutput_TextChanged);
       // 
       // statusStrip1
       // 
+      this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
       this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblLines});
       this.statusStrip1.Location = new System.Drawing.Point(0, 405);
@@ -260,7 +261,7 @@
       // lblLines
       // 
       this.lblLines.Name = "lblLines";
-      this.lblLines.Size = new System.Drawing.Size(654, 17);
+      this.lblLines.Size = new System.Drawing.Size(654, 15);
       this.lblLines.Spring = true;
       this.lblLines.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
@@ -271,10 +272,10 @@
       this.panel2.Controls.Add(this.label7);
       this.panel2.Controls.Add(this.panel3);
       this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-      this.panel2.Location = new System.Drawing.Point(455, 24);
+      this.panel2.Location = new System.Drawing.Point(455, 33);
       this.panel2.Name = "panel2";
       this.panel2.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-      this.panel2.Size = new System.Drawing.Size(214, 381);
+      this.panel2.Size = new System.Drawing.Size(214, 372);
       this.panel2.TabIndex = 6;
       // 
       // panel5
@@ -329,11 +330,11 @@
       this.tabControl1.Controls.Add(this.tabPage3);
       this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-      this.tabControl1.Location = new System.Drawing.Point(0, 24);
+      this.tabControl1.Location = new System.Drawing.Point(0, 33);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.Padding = new System.Drawing.Point(9, 2);
       this.tabControl1.SelectedIndex = 0;
-      this.tabControl1.Size = new System.Drawing.Size(455, 381);
+      this.tabControl1.Size = new System.Drawing.Size(455, 372);
       this.tabControl1.TabIndex = 7;
       this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.TabControl1_SelectedIndexChanged);
       // 
@@ -342,10 +343,10 @@
       this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
       this.tabPage1.Controls.Add(this.panel1);
       this.tabPage1.Controls.Add(this.textBox1);
-      this.tabPage1.Location = new System.Drawing.Point(4, 23);
+      this.tabPage1.Location = new System.Drawing.Point(4, 32);
       this.tabPage1.Name = "tabPage1";
       this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage1.Size = new System.Drawing.Size(447, 354);
+      this.tabPage1.Size = new System.Drawing.Size(447, 336);
       this.tabPage1.TabIndex = 0;
       this.tabPage1.Text = "Orders Simplifier";
       // 
@@ -358,7 +359,7 @@
       this.textBox1.Multiline = true;
       this.textBox1.Name = "textBox1";
       this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.textBox1.Size = new System.Drawing.Size(186, 348);
+      this.textBox1.Size = new System.Drawing.Size(186, 330);
       this.textBox1.TabIndex = 0;
       this.textBox1.Text = global::OrderSimplifier.Properties.Settings.Default.SourceText;
       this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseClick);
@@ -377,10 +378,10 @@
       this.tabPage2.Controls.Add(this.numCount);
       this.tabPage2.Controls.Add(this.numSteps);
       this.tabPage2.Controls.Add(this.numStartIndex);
-      this.tabPage2.Location = new System.Drawing.Point(4, 23);
+      this.tabPage2.Location = new System.Drawing.Point(4, 32);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(447, 354);
+      this.tabPage2.Size = new System.Drawing.Size(447, 336);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "Fu Simulation";
       // 
@@ -401,7 +402,7 @@
       this.rdLF.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::OrderSimplifier.Properties.Settings.Default, "SimulationLF", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.rdLF.Location = new System.Drawing.Point(26, 40);
       this.rdLF.Name = "rdLF";
-      this.rdLF.Size = new System.Drawing.Size(41, 20);
+      this.rdLF.Size = new System.Drawing.Size(60, 29);
       this.rdLF.TabIndex = 0;
       this.rdLF.TabStop = true;
       this.rdLF.Text = "LF";
@@ -413,7 +414,7 @@
       this.rdSF.AutoSize = true;
       this.rdSF.Location = new System.Drawing.Point(26, 85);
       this.rdSF.Name = "rdSF";
-      this.rdSF.Size = new System.Drawing.Size(43, 20);
+      this.rdSF.Size = new System.Drawing.Size(63, 29);
       this.rdSF.TabIndex = 1;
       this.rdSF.Text = "SF";
       this.rdSF.UseVisualStyleBackColor = true;
@@ -424,7 +425,7 @@
       this.label5.AutoSize = true;
       this.label5.Location = new System.Drawing.Point(180, 104);
       this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(67, 16);
+      this.label5.Size = new System.Drawing.Size(102, 25);
       this.label5.TabIndex = 9;
       this.label5.Text = "Contracts:";
       // 
@@ -433,7 +434,7 @@
       this.label4.AutoSize = true;
       this.label4.Location = new System.Drawing.Point(180, 250);
       this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(45, 16);
+      this.label4.Size = new System.Drawing.Size(71, 25);
       this.label4.TabIndex = 7;
       this.label4.Text = "Count:";
       // 
@@ -442,7 +443,7 @@
       this.label3.AutoSize = true;
       this.label3.Location = new System.Drawing.Point(180, 177);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(46, 16);
+      this.label3.Size = new System.Drawing.Size(69, 25);
       this.label3.TabIndex = 6;
       this.label3.Text = "Steps:";
       // 
@@ -451,7 +452,7 @@
       this.label2.AutoSize = true;
       this.label2.Location = new System.Drawing.Point(180, 27);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(73, 16);
+      this.label2.Size = new System.Drawing.Size(112, 25);
       this.label2.TabIndex = 5;
       this.label2.Text = "Start Index:";
       // 
@@ -470,7 +471,7 @@
             0,
             0});
       this.numVolume.Name = "numVolume";
-      this.numVolume.Size = new System.Drawing.Size(120, 22);
+      this.numVolume.Size = new System.Drawing.Size(120, 30);
       this.numVolume.TabIndex = 12;
       this.numVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       this.numVolume.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationContracts;
@@ -486,7 +487,7 @@
             0,
             0});
       this.numCount.Name = "numCount";
-      this.numCount.Size = new System.Drawing.Size(120, 22);
+      this.numCount.Size = new System.Drawing.Size(120, 30);
       this.numCount.TabIndex = 14;
       this.numCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       this.numCount.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationCount;
@@ -498,7 +499,7 @@
       this.numSteps.DecimalPlaces = 1;
       this.numSteps.Location = new System.Drawing.Point(184, 204);
       this.numSteps.Name = "numSteps";
-      this.numSteps.Size = new System.Drawing.Size(120, 22);
+      this.numSteps.Size = new System.Drawing.Size(120, 30);
       this.numSteps.TabIndex = 13;
       this.numSteps.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       this.numSteps.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationSteps;
@@ -510,58 +511,39 @@
       this.numStartIndex.DecimalPlaces = 1;
       this.numStartIndex.Location = new System.Drawing.Point(184, 54);
       this.numStartIndex.Maximum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
-      this.numStartIndex.Minimum = new decimal(new int[] {
-            950,
+            9999,
             0,
             0,
             0});
       this.numStartIndex.Name = "numStartIndex";
-      this.numStartIndex.Size = new System.Drawing.Size(120, 22);
+      this.numStartIndex.Size = new System.Drawing.Size(120, 30);
       this.numStartIndex.TabIndex = 11;
       this.numStartIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       this.numStartIndex.Value = global::OrderSimplifier.Properties.Settings.Default.SimulationStartIndex;
       this.numStartIndex.ValueChanged += new System.EventHandler(this.NumStartIndex_ValueChanged);
       // 
-      // menuStrip1
-      // 
-      this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-      this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-      this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(669, 24);
-      this.menuStrip1.TabIndex = 8;
-      this.menuStrip1.Text = "menuStrip1";
-      // 
-      // fileToolStripMenuItem
-      // 
-      this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-      this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-      this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-      this.fileToolStripMenuItem.Text = "&File";
-      // 
-      // exitToolStripMenuItem
-      // 
-      this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-      this.exitToolStripMenuItem.Text = "E&xit";
-      this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-      // 
       // tabPage3
       // 
       this.tabPage3.Controls.Add(this.btnBrokerOrders);
       this.tabPage3.Controls.Add(this.txtBrokerOrders);
-      this.tabPage3.Location = new System.Drawing.Point(4, 23);
+      this.tabPage3.Location = new System.Drawing.Point(4, 32);
       this.tabPage3.Name = "tabPage3";
       this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage3.Size = new System.Drawing.Size(447, 354);
+      this.tabPage3.Size = new System.Drawing.Size(447, 345);
       this.tabPage3.TabIndex = 2;
       this.tabPage3.Text = "Confirmation Note";
       this.tabPage3.UseVisualStyleBackColor = true;
+      // 
+      // btnBrokerOrders
+      // 
+      this.btnBrokerOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnBrokerOrders.Location = new System.Drawing.Point(338, 7);
+      this.btnBrokerOrders.Name = "btnBrokerOrders";
+      this.btnBrokerOrders.Size = new System.Drawing.Size(103, 59);
+      this.btnBrokerOrders.TabIndex = 1;
+      this.btnBrokerOrders.Text = ">>";
+      this.btnBrokerOrders.UseVisualStyleBackColor = true;
+      this.btnBrokerOrders.Click += new System.EventHandler(this.btnBrokerOrders_Click);
       // 
       // txtBrokerOrders
       // 
@@ -579,21 +561,36 @@
       this.txtBrokerOrders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBrokerOrders_MouseClick);
       this.txtBrokerOrders.Enter += new System.EventHandler(this.txtBrokerOrders_Enter);
       // 
-      // btnBrokerOrders
+      // menuStrip1
       // 
-      this.btnBrokerOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.btnBrokerOrders.Location = new System.Drawing.Point(338, 7);
-      this.btnBrokerOrders.Name = "btnBrokerOrders";
-      this.btnBrokerOrders.Size = new System.Drawing.Size(103, 59);
-      this.btnBrokerOrders.TabIndex = 1;
-      this.btnBrokerOrders.Text = ">>";
-      this.btnBrokerOrders.UseVisualStyleBackColor = true;
-      this.btnBrokerOrders.Click += new System.EventHandler(this.btnBrokerOrders_Click);
+      this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+      this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+      this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+      this.menuStrip1.Name = "menuStrip1";
+      this.menuStrip1.Size = new System.Drawing.Size(669, 33);
+      this.menuStrip1.TabIndex = 8;
+      this.menuStrip1.Text = "menuStrip1";
+      // 
+      // fileToolStripMenuItem
+      // 
+      this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+      this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+      this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+      this.fileToolStripMenuItem.Text = "&File";
+      // 
+      // exitToolStripMenuItem
+      // 
+      this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 34);
+      this.exitToolStripMenuItem.Text = "E&xit";
+      this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
       // 
       // Form1
       // 
       this.AcceptButton = this.button1;
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(669, 427);
       this.Controls.Add(this.tabControl1);
@@ -603,7 +600,7 @@
       this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MainMenuStrip = this.menuStrip1;
-      this.MinimumSize = new System.Drawing.Size(550, 39);
+      this.MinimumSize = new System.Drawing.Size(550, 56);
       this.Name = "Form1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "OptionsGo.Net Utilities";
@@ -630,10 +627,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.numCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numSteps)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numStartIndex)).EndInit();
-      this.menuStrip1.ResumeLayout(false);
-      this.menuStrip1.PerformLayout();
       this.tabPage3.ResumeLayout(false);
       this.tabPage3.PerformLayout();
+      this.menuStrip1.ResumeLayout(false);
+      this.menuStrip1.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 

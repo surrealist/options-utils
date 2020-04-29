@@ -30,7 +30,7 @@
     <PublisherName>OptionsGo.Net</PublisherName>
     <SuiteName>OptionsGo.Net Utilities</SuiteName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
